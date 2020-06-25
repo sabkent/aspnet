@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a one-line script
       env:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
       run: echo my docker username is $DOCKER_USERNAME
     - name: Build the Docker image
       run: docker build --tag sabkent/aspnet:$(date +%s) --file "PaymentGateway/Dockerfile"  . 
