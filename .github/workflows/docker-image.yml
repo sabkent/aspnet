@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build --tag sabkent/aspnet:$(date +%s) --file "api/Dockerfile"  . 
+      run: docker build --tag sabkent/aspnet:$(date +%s) --file "PaymentGateway/Dockerfile"  . 
