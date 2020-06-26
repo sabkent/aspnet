@@ -14,9 +14,10 @@ jobs:
 
     steps:      
     - uses: actions/checkout@v2
-    - name: Run a one-line script
+    - name: Create docker image
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
       run: sh ./build/dockerimage.sh
     - name: Build the Docker image
-      run: docker build --tag sabkent/aspnet:$(date +%s) --file "PaymentGateway/Dockerfile"  . 
+      run: echo your mom
