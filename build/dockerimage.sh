@@ -1,0 +1,1 @@
+echo your docker username is $DOCKER_USERNAME
