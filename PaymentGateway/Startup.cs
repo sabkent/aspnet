@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 namespace PaymentGateway
 {
@@ -19,6 +20,8 @@ namespace PaymentGateway
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<KestrelServerOptions>(
+                Configuration.GetSection("Kestrel"));
             services.AddAuthentication("OAuth")
                 .AddJwtBearer("OAuth", config =>
                 {
