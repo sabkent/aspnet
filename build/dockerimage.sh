@@ -1,4 +1,5 @@
 echo login to docker
-docker build --tag sabkent/aspnet:$(date +%s) --file "PaymentGateway/Dockerfile"  . 
+IMAGE_NAME = sabkent/aspnet:$(date +%s)
+docker build --tag $IMAGE_NAME --file "PaymentGateway/Dockerfile"  . 
 docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-docker push sabkent/aspnet:$(date +%s)
+docker push $IMAGE_NAME
